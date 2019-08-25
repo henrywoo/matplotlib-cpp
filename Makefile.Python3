@@ -1,0 +1,43 @@
+examples: minimal basic modern animation nonblock xkcd quiver bar surface fill_inbetween fill update imshow
+
+minimal: examples/minimal.cpp matplotlibcpp.h
+	cd examples && g++ -DWITHOUT_NUMPY minimal.cpp -Iext/plot/ $(shell python3-config --includes) $(shell python3-config --ldflags) -lopencv_core -lopencv_imgproc -o minimal -std=c++17
+
+basic: examples/basic.cpp matplotlibcpp.h
+	cd examples && g++ basic.cpp -Iext/plot/ $(shell python3-config --includes) $(shell python3-config --ldflags) -lopencv_core -lopencv_imgproc -o basic -std=c++17
+
+modern: examples/modern.cpp matplotlibcpp.h
+	cd examples && g++ modern.cpp -Iext/plot/ $(shell python3-config --includes) $(shell python3-config --ldflags) -lopencv_core -lopencv_imgproc -o modern -std=c++17
+
+animation: examples/animation.cpp matplotlibcpp.h
+	cd examples && g++ animation.cpp -Iext/plot/ $(shell python3-config --includes) $(shell python3-config --ldflags) -lopencv_core -lopencv_imgproc -o animation -std=c++17
+
+nonblock: examples/nonblock.cpp matplotlibcpp.h
+	cd examples && g++ nonblock.cpp -Iext/plot/ $(shell python3-config --includes) $(shell python3-config --ldflags) -lopencv_core -lopencv_imgproc -o nonblock -std=c++17
+
+quiver: examples/quiver.cpp matplotlibcpp.h
+	cd examples && g++ quiver.cpp -Iext/plot/ $(shell python3-config --includes) $(shell python3-config --ldflags) -lopencv_core -lopencv_imgproc -o quiver -std=c++17
+
+xkcd: examples/xkcd.cpp matplotlibcpp.h
+	cd examples && g++ xkcd.cpp -Iext/plot/ $(shell python3-config --includes) $(shell python3-config --ldflags) -lopencv_core -lopencv_imgproc -o xkcd -std=c++17
+
+bar: examples/bar.cpp matplotlibcpp.h
+	cd examples && g++ bar.cpp -Iext/plot/ $(shell python3-config --includes) $(shell python3-config --ldflags) -lopencv_core -lopencv_imgproc -o bar -std=c++17
+
+surface: examples/surface.cpp matplotlibcpp.h
+	cd examples && g++ surface.cpp -Iext/plot/ $(shell python3-config --includes) $(shell python3-config --ldflags) -lopencv_core -lopencv_imgproc -o surface -std=c++17
+
+fill_inbetween: examples/fill_inbetween.cpp matplotlibcpp.h
+	cd examples && g++ fill_inbetween.cpp -Iext/plot/ $(shell python3-config --includes) $(shell python3-config --ldflags) -lopencv_core -lopencv_imgproc -o fill_inbetween -std=c++17
+
+fill: examples/fill.cpp matplotlibcpp.h
+	cd examples && g++ fill.cpp -Iext/plot/ $(shell python3-config --includes) $(shell python3-config --ldflags) -lopencv_core -lopencv_imgproc -o fill -std=c++17
+
+update: examples/update.cpp matplotlibcpp.h
+	cd examples && g++ update.cpp -Iext/plot/ $(shell python3-config --includes) $(shell python3-config --ldflags) -lopencv_core -lopencv_imgproc -o update -std=c++17
+
+imshow: examples/imshow.cpp matplotlibcpp.h
+	cd examples && g++ imshow.cpp -Iext/plot/ $(shell python3-config --includes) $(shell python3-config --ldflags) -lopencv_core -lopencv_imgproc -o imshow -std=c++17
+
+clean:
+	rm -f examples/{minimal,basic,modern,animation,nonblock,xkcd,quiver,bar,surface,fill_inbetween,fill,update,imshow}
