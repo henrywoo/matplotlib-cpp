@@ -20,6 +20,7 @@ void update_window(const double x, const double y, const double t,
 
 int main()
 {
+    plt::detail::_interpreter::get();
     size_t n = 1000;
     std::vector<double> x, y;
 

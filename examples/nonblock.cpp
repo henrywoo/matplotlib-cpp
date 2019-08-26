@@ -10,6 +10,7 @@ using namespace std;
 
 int main()
 {
+    plt::detail::_interpreter::get();
     // Prepare data.
     int n = 5000;
     std::vector<double> x(n), y(n), z(n), w(n,2);

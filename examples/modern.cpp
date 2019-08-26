@@ -7,6 +7,7 @@ namespace plt = matplotlibcpp;
 
 int main() 
 {
+    plt::detail::_interpreter::get();
 	// plot(y) - the x-coordinates are implicitly set to [0,1,...,n)
 	//plt::plot({1,2,3,4}); 
 	

@@ -8,6 +8,7 @@ namespace plt = matplotlibcpp;
 
 int main()
 {
+    plt::detail::_interpreter::get();
     // Prepare data
     int ncols = 500, nrows = 300;
     std::vector<float> z(ncols * nrows);
